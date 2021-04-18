@@ -7,7 +7,7 @@
     <ul>
         {{#each burgers}}
         {{#unless eaten}}
-        {{name}} <button class="changeEaten btn-sm" data-id="{{id}}" data-newEat="{{eaten}}"
+        {{name}} <button class="burgerEat btn-sm" data-id="{{id}}" data-newEat="{{eaten}}"
             type="submit">DEVOUR!</button>
         {{/unless}}
         {{/each}}
