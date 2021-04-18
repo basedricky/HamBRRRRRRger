@@ -12,6 +12,7 @@ app.set('view engine', 'handlebars');
 // get route
 
 router.get('/', (req, res) => {
+
     burger.selectAll((data) => {
         const handlebarBurger = {
             burgers: data,
@@ -20,4 +21,32 @@ router.get('/', (req, res) => {
     })
 })
 
-module.exports = router
+// post
+
+router.post('/api/burgers', (req, res) => {
+
+    burger.insertOne([req.body.name], (result) => {
+        res.json(result);
+    });
+});
+
+// put route
+
+router.put('/api/burgers/:id', (req, res) => {
+
+    const id = `${req.params.id}`;
+
+    burger.updateOne(
+
+        id,
+
+        (result) => {
+            if (result.changedRows === 0) {
+                return res.status(404).end();
+            }
+            res.status(200).end();
+        }
+    );
+});
+
+module.exports = router;
