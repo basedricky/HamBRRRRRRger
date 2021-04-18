@@ -1,5 +1,5 @@
 const connection = require('./connection.js');
-
+// was able to find a very efficient connection query method here https://www.codota.com/code/javascript/functions/mysql/Connection/query
 const orm = {
 
     selectAll(table, cb) {
