@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     })
 })
 
-// post
+// post route
 
 router.post('/api/burgers', (req, res) => {
 
@@ -29,6 +29,7 @@ router.post('/api/burgers', (req, res) => {
         res.json(result);
     });
 });
+
 
 // put route
 
