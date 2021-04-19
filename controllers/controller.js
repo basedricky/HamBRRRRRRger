@@ -3,10 +3,10 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const router = express.Router();
 const app = express();
-const burger = require('../models/burgers.js');
+const burger = require('../models/burger.js');
 
 
-app.engine('exphbs', handlebars({ defaultLayout: 'main' }));
+app.engine('exphbs', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // get route

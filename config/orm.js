@@ -10,7 +10,7 @@ const orm = {
     },
 
     insertOne(reqBody, name, cb) {
-        console.query(`INSERT INTO ?? SET name = ?`, [reqBody, name], (err, result) => {
+        connection.query(`INSERT INTO ?? SET name = ?`, [reqBody, name], (err, result) => {
             if (err) throw err;
             cb(result);
 
@@ -18,7 +18,7 @@ const orm = {
     },
 
     updateOne(id, cb) {
-        connection.queryj(`UPDATE burgers SET eaten = 1 WHERE ID = ?`, [id], (err, result) => {
+        connection.query(`UPDATE burgers SET eaten = 1 WHERE ID = ?`, [id], (err, result) => {
             if (err) throw err;
             cb(result)
 

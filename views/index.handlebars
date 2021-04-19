@@ -1,36 +1,41 @@
-<h1>Burgers!</h1>
-
-
 <div class="row">
-    <h2>Burgers waiting to be DEVOURED!</h2>
+    <div class="col-sm-6 mb-6">
+        <h2>Burgers waiting to be DEVOURED!</h2>
 
-    <ul>
-        {{#each burgers}}
-        {{#unless eaten}}
-        {{name}} <button class="burgerEat btn-sm" data-id="{{id}}" data-newEat="{{eaten}}"
-            type="submit">DEVOUR!</button>
-        {{/unless}}
-        {{/each}}
-    </ul>
+        <ol>
+            {{#each burgers}}
+            {{#unless eaten}}
+            <li>
+                {{name}} <button class="burgerEat btn-sm" data-id="{{id}}" data-newEat="{{eaten}}"
+                    type="submit">DEVOUR!</button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ol>
 
-    <h2>In the Burger Trash Bin.</h2>
+    </div>
 
-    <ul>
-        {{#each burgers}}
-        {{#if eaten}}
-        {{/if}}
-        {{/each}}
-    </ul>
-
-    <div class="row">
-        <form id="create-form">
-            <h2>Add a Burger</h2>
-            <div class="form-group">
-                <label for="burgerAdd">What burger do you want to DEVOUR?</label>
-                <input type="text" id="burgerAdd" name="name">
-
-            </div>
-
-            <button type="submit">Add a Burger</button>
-        </form>
+    <div class="col-sm-6 mb-6">
+        <h2>In the Burger Trash Bin.</h2>
+        <ol>
+            {{#each burgers}}
+            {{#if eaten}}
+            <li>
+                {{name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ol>
+    </div>
+    <div class='row'>
+        <div class="col-md-12">
+            <form id="create-form">
+                <h2>Add a Burger</h2>
+                <div class="form-group">
+                    <label for="burgerAdd">What burger do you want to DEVOUR?</label>
+                    <input type="text" id="burgerAdd" name="name">
+                </div>
+                <button type="submit">Add a Burger</button>
+            </form>
+        </div>
     </div>
